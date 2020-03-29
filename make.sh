@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -x
+
 NAME="$DOCKER_USER/octodns"
 
 # build docker container
