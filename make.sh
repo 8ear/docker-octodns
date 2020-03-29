@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -xv
-
 NAME="$DOCKER_USER/octodns"
 
 # build docker container
@@ -9,9 +7,8 @@ NAME="$DOCKER_USER/octodns"
 VERSION=`python run.py`
 for V in $VERSION
 do
-	#docker build -t "$NAME:$V" --build-arg VERSION="$V" -f Dockerfile .
-    #docker build -t "$NAME:${V}-full" --build-arg VERSION="$V" -f full/Dockerfile .
-    echo
+	docker build -t "$NAME:$V" --build-arg VERSION="$V" -f Dockerfile .
+    docker build -t "$NAME:${V}-full" --build-arg VERSION="$V" -f full/Dockerfile .
 done
 
 # latest
