@@ -1,0 +1,18 @@
+language: minimal
+dist: xenial
+addons:
+  apt:
+    sources:
+      - docker-xenial
+
+install:
+# Add docker-retag executable
+- wget -q https://github.com/joshdk/docker-retag/releases/download/0.0.2/docker-retag && chmod +x docker-retag
+
+script:
+- bash make.sh
+
+
+# # don't notify me when things fail
+# notifications:
+#   email: false
